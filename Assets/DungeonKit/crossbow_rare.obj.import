@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/crossbow_rare.obj-d464e9e5334febc6b492da57cb41a6ce.mesh"
+
+[deps]
+
+files=[ "res://.import/crossbow_rare.obj-d464e9e5334febc6b492da57cb41a6ce.mesh" ]
+
+source_file="res://Assets/DungeonKit/crossbow_rare.obj"
+dest_files=[ "res://.import/crossbow_rare.obj-d464e9e5334febc6b492da57cb41a6ce.mesh", "res://.import/crossbow_rare.obj-d464e9e5334febc6b492da57cb41a6ce.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

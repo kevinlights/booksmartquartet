@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/axeDouble_uncommon.obj-2c64ad2379ec24873c336c5ad8e77fe1.mesh"
+
+[deps]
+
+files=[ "res://.import/axeDouble_uncommon.obj-2c64ad2379ec24873c336c5ad8e77fe1.mesh" ]
+
+source_file="res://Assets/DungeonKit/axeDouble_uncommon.obj"
+dest_files=[ "res://.import/axeDouble_uncommon.obj-2c64ad2379ec24873c336c5ad8e77fe1.mesh", "res://.import/axeDouble_uncommon.obj-2c64ad2379ec24873c336c5ad8e77fe1.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

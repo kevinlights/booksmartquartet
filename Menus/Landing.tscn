@@ -1,0 +1,464 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Resources/gui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/LetsTracebasic.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/mastodon_icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/matrix-icon.png" type="Texture" id=4]
+[ext_resource path="res://Assets/gitlab-icon-rgb.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Jellee-Bold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Menus/Landing.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 144
+outline_size = 8
+outline_color = Color( 0.443137, 0.541176, 0.737255, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 96
+outline_size = 8
+outline_color = Color( 0.443137, 0.541176, 0.737255, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 52
+outline_size = 2
+outline_color = Color( 0.737255, 0.909804, 1, 0.282353 )
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "toggle"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("social_panel:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -500, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("social_panel:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("../bottom_right/fedinews:rect_position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("../bottom_right/fedinews:rect_position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -54, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "intro"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("gui_root/center/MainMenu:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("gui_root/center/MainMenu:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("gui_root/center/MainMenu:rect_position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -220, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("gui_root/center/MainMenu:rect_position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -110, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("gui_root/bottom_left/social_buttons:rect_position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("gui_root/bottom_left/social_buttons:rect_position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -90, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("gui_root/bottom_right/fedinews:rect_position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("gui_root/bottom_right/fedinews:rect_position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -54, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("gui_root/center/Title:rect_position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( -330, -0.25, 0, 0.25, 0, -220, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("gui_root/center/Title:rect_position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( -120, -0.25, 0, 0.25, 0, -300, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("gui_root/center/Title:rect_scale:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 1.5, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("gui_root/center/Title:rect_scale:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( 1.5, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/12/type = "bezier"
+tracks/12/path = NodePath("gui_root/center/press_any_key:modulate:r")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/13/type = "bezier"
+tracks/13/path = NodePath("gui_root/center/press_any_key:modulate:g")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/14/type = "bezier"
+tracks/14/path = NodePath("gui_root/center/press_any_key:modulate:b")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/15/type = "bezier"
+tracks/15/path = NodePath("gui_root/center/press_any_key:modulate:a")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[node name="LandingMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_right = -2.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gui_root" type="CanvasLayer" parent="."]
+
+[node name="bottom_right" type="Control" parent="gui_root"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fedinews" type="Button" parent="gui_root/bottom_right"]
+margin_left = -281.0
+margin_right = -14.0
+margin_bottom = 40.0
+theme = ExtResource( 1 )
+text = "News from the Fediverse"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="gui_root"]
+margin_left = 14.0
+margin_top = 14.0
+margin_right = 230.0
+margin_bottom = 48.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "v0.1 (CurdleJam edition)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="top_center" type="Control" parent="gui_root"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bottom_left" type="Control" parent="gui_root"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="social_buttons" type="HBoxContainer" parent="gui_root/bottom_left"]
+margin_left = 14.0
+margin_right = 258.0
+margin_bottom = 76.0
+custom_constants/separation = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mastodon" type="Button" parent="gui_root/bottom_left/social_buttons"]
+margin_right = 76.0
+margin_bottom = 76.0
+hint_tooltip = "Armen on Fosstodon"
+icon = ExtResource( 3 )
+flat = true
+
+[node name="matrix" type="Button" parent="gui_root/bottom_left/social_buttons"]
+margin_left = 84.0
+margin_right = 160.0
+margin_bottom = 76.0
+hint_tooltip = "The FediJam Matrix channel"
+icon = ExtResource( 4 )
+flat = true
+
+[node name="gitlab" type="Button" parent="gui_root/bottom_left/social_buttons"]
+margin_left = 168.0
+margin_right = 244.0
+margin_bottom = 76.0
+hint_tooltip = "Source code on GitLab"
+icon = ExtResource( 5 )
+flat = true
+
+[node name="center" type="Control" parent="gui_root"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="gui_root/center"]
+margin_left = -330.0
+margin_top = -120.0
+margin_right = 110.0
+margin_bottom = 34.0
+rect_scale = Vector2( 1.5, 1.5 )
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "BookSmart"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SubTitle" type="Label" parent="gui_root/center/Title"]
+margin_top = 80.0
+margin_right = 440.0
+margin_bottom = 234.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "quartets"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="VBoxContainer" parent="gui_root/center"]
+margin_right = 440.0
+margin_bottom = 220.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+custom_constants/separation = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="play" type="Button" parent="gui_root/center/MainMenu"]
+margin_right = 440.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 3 )
+text = "Play"
+
+[node name="credits" type="Button" parent="gui_root/center/MainMenu"]
+margin_top = 76.0
+margin_right = 440.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 3 )
+text = "Credits"
+
+[node name="quit" type="Button" parent="gui_root/center/MainMenu"]
+margin_top = 152.0
+margin_right = 440.0
+margin_bottom = 220.0
+custom_fonts/font = SubResource( 3 )
+text = "Quit"
+
+[node name="press_any_key" type="Label" parent="gui_root/center"]
+margin_left = -100.0
+margin_top = 147.0
+margin_right = 100.0
+margin_bottom = 181.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "<press any key>"
+align = 1
+
+[node name="top_right" type="Control" parent="gui_root"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 38.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="social_panel" type="Panel" parent="gui_root/top_right"]
+anchor_bottom = 1.0
+margin_right = 500.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="social_scroller" type="ScrollContainer" parent="gui_root/top_right/social_panel"]
+anchor_bottom = 1.0
+margin_right = 500.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="margin" type="MarginContainer" parent="gui_root/top_right/social_panel/social_scroller"]
+
+[node name="social" type="VBoxContainer" parent="gui_root/top_right/social_panel/social_scroller/margin"]
+custom_constants/separation = 8
+
+[node name="close_fedinews" type="Button" parent="gui_root/top_right/social_panel"]
+margin_left = 436.0
+margin_top = 23.0
+margin_right = 478.0
+margin_bottom = 61.0
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="animate_social" type="AnimationPlayer" parent="gui_root/top_right"]
+anims/toggle = SubResource( 4 )
+
+[node name="fetch_mastodon_feed" type="HTTPRequest" parent="."]
+
+[node name="press_any_key" type="AnimationPlayer" parent="."]
+anims/intro = SubResource( 5 )
+
+[connection signal="pressed" from="gui_root/bottom_right/fedinews" to="." method="_on_fedinews_pressed"]
+[connection signal="pressed" from="gui_root/bottom_left/social_buttons/mastodon" to="." method="_on_mastodon_pressed"]
+[connection signal="pressed" from="gui_root/bottom_left/social_buttons/matrix" to="." method="_on_matrix_pressed"]
+[connection signal="pressed" from="gui_root/bottom_left/social_buttons/gitlab" to="." method="_on_gitlab_pressed"]
+[connection signal="pressed" from="gui_root/center/MainMenu/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="gui_root/center/MainMenu/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="gui_root/center/MainMenu/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="gui_root/top_right/social_panel/close_fedinews" to="." method="_on_close_fedinews_pressed"]
+[connection signal="request_completed" from="fetch_mastodon_feed" to="." method="_on_fetch_mastodon_feed_request_completed"]

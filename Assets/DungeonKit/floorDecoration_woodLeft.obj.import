@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/floorDecoration_woodLeft.obj-5234e06b9e158808cee086647fc83d7d.mesh"
+
+[deps]
+
+files=[ "res://.import/floorDecoration_woodLeft.obj-5234e06b9e158808cee086647fc83d7d.mesh" ]
+
+source_file="res://Assets/DungeonKit/floorDecoration_woodLeft.obj"
+dest_files=[ "res://.import/floorDecoration_woodLeft.obj-5234e06b9e158808cee086647fc83d7d.mesh", "res://.import/floorDecoration_woodLeft.obj-5234e06b9e158808cee086647fc83d7d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

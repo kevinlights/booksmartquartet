@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bookcaseWideFilled_broken.obj-22b7709bbaf26b99c274846d7360a79d.mesh"
+
+[deps]
+
+files=[ "res://.import/bookcaseWideFilled_broken.obj-22b7709bbaf26b99c274846d7360a79d.mesh" ]
+
+source_file="res://Assets/DungeonKit/bookcaseWideFilled_broken.obj"
+dest_files=[ "res://.import/bookcaseWideFilled_broken.obj-22b7709bbaf26b99c274846d7360a79d.mesh", "res://.import/bookcaseWideFilled_broken.obj-22b7709bbaf26b99c274846d7360a79d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

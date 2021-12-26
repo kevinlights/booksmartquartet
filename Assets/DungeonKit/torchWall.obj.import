@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/torchWall.obj-3986fc590fda26f1ea3950a81e7cf52e.mesh"
+
+[deps]
+
+files=[ "res://.import/torchWall.obj-3986fc590fda26f1ea3950a81e7cf52e.mesh" ]
+
+source_file="res://Assets/DungeonKit/torchWall.obj"
+dest_files=[ "res://.import/torchWall.obj-3986fc590fda26f1ea3950a81e7cf52e.mesh", "res://.import/torchWall.obj-3986fc590fda26f1ea3950a81e7cf52e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

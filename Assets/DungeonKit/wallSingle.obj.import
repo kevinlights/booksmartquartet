@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/wallSingle.obj-1ee8196d37d0c246fe2e84fa6bd26d15.mesh"
+
+[deps]
+
+files=[ "res://.import/wallSingle.obj-1ee8196d37d0c246fe2e84fa6bd26d15.mesh" ]
+
+source_file="res://Assets/DungeonKit/wallSingle.obj"
+dest_files=[ "res://.import/wallSingle.obj-1ee8196d37d0c246fe2e84fa6bd26d15.mesh", "res://.import/wallSingle.obj-1ee8196d37d0c246fe2e84fa6bd26d15.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

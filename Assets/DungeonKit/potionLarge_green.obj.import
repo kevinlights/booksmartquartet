@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/potionLarge_green.obj-bff5dbc3dbcc5c70b8c3e55f1fbfaa8a.mesh"
+
+[deps]
+
+files=[ "res://.import/potionLarge_green.obj-bff5dbc3dbcc5c70b8c3e55f1fbfaa8a.mesh" ]
+
+source_file="res://Assets/DungeonKit/potionLarge_green.obj"
+dest_files=[ "res://.import/potionLarge_green.obj-bff5dbc3dbcc5c70b8c3e55f1fbfaa8a.mesh", "res://.import/potionLarge_green.obj-bff5dbc3dbcc5c70b8c3e55f1fbfaa8a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/banner.obj-a4509a7bcdd9885e1303f9768ce2217e.mesh"
+
+[deps]
+
+files=[ "res://.import/banner.obj-a4509a7bcdd9885e1303f9768ce2217e.mesh" ]
+
+source_file="res://Assets/DungeonKit/banner.obj"
+dest_files=[ "res://.import/banner.obj-a4509a7bcdd9885e1303f9768ce2217e.mesh", "res://.import/banner.obj-a4509a7bcdd9885e1303f9768ce2217e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

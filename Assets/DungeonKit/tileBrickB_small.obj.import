@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tileBrickB_small.obj-a3ff3e801f913ee3cab684d2d294b8b4.mesh"
+
+[deps]
+
+files=[ "res://.import/tileBrickB_small.obj-a3ff3e801f913ee3cab684d2d294b8b4.mesh" ]
+
+source_file="res://Assets/DungeonKit/tileBrickB_small.obj"
+dest_files=[ "res://.import/tileBrickB_small.obj-a3ff3e801f913ee3cab684d2d294b8b4.mesh", "res://.import/tileBrickB_small.obj-a3ff3e801f913ee3cab684d2d294b8b4.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/scaffold_low.obj-29303006a78f9ec2cc591b8df709b57b.mesh"
+
+[deps]
+
+files=[ "res://.import/scaffold_low.obj-29303006a78f9ec2cc591b8df709b57b.mesh" ]
+
+source_file="res://Assets/DungeonKit/scaffold_low.obj"
+dest_files=[ "res://.import/scaffold_low.obj-29303006a78f9ec2cc591b8df709b57b.mesh", "res://.import/scaffold_low.obj-29303006a78f9ec2cc591b8df709b57b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

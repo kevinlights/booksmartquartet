@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pillar.obj-f2b40eec1c50797f4cc6b59ece6a289f.mesh"
+
+[deps]
+
+files=[ "res://.import/pillar.obj-f2b40eec1c50797f4cc6b59ece6a289f.mesh" ]
+
+source_file="res://Assets/DungeonKit/pillar.obj"
+dest_files=[ "res://.import/pillar.obj-f2b40eec1c50797f4cc6b59ece6a289f.mesh", "res://.import/pillar.obj-f2b40eec1c50797f4cc6b59ece6a289f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

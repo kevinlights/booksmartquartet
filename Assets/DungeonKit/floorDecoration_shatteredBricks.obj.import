@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/floorDecoration_shatteredBricks.obj-c60a2d3e41e017f67d98cb2031bfdd5e.mesh"
+
+[deps]
+
+files=[ "res://.import/floorDecoration_shatteredBricks.obj-c60a2d3e41e017f67d98cb2031bfdd5e.mesh" ]
+
+source_file="res://Assets/DungeonKit/floorDecoration_shatteredBricks.obj"
+dest_files=[ "res://.import/floorDecoration_shatteredBricks.obj-c60a2d3e41e017f67d98cb2031bfdd5e.mesh", "res://.import/floorDecoration_shatteredBricks.obj-c60a2d3e41e017f67d98cb2031bfdd5e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

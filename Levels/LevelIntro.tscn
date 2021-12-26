@@ -1,0 +1,312 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Resources/meshlibrary.tres" type="MeshLibrary" id=1]
+[ext_resource path="res://Assets/DungeonCharacters/character_rogue.fbx" type="PackedScene" id=2]
+[ext_resource path="res://Assets/DungeonCharacters/character_rogue.gd" type="Script" id=3]
+[ext_resource path="res://Assets/cursor.png" type="Texture" id=4]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=5]
+[ext_resource path="res://Assets/DungeonKit/bookA.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://Resources/gui_theme.tres" type="Theme" id=7]
+[ext_resource path="res://Assets/Jellee-Bold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Assets/book1.png" type="Texture" id=9]
+[ext_resource path="res://Levels/pausemenu.gd" type="Script" id=10]
+
+[sub_resource type="Animation" id=3]
+resource_name = "pulse"
+loop = true
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Sprite")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 11, 2, 14, 0, 0, 0, 1, 0.5, 0.5, 0.5, 0.5, 1, 11, 2, 14, 0, 0, 0, 1, 0.4, 0.4, 0.4, 1, 1, 11, 2, 14, 0, 0, 0, 1, 0.5, 0.5, 0.5 )
+
+[sub_resource type="ProceduralSky" id=1]
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+ambient_light_color = Color( 0.858824, 0.858824, 0.858824, 1 )
+ambient_light_energy = 1.15
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+
+[sub_resource type="CubeMesh" id=6]
+material = SubResource( 5 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="Curve" id=7]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, -360 ), 0.0, 0.0, 0, 0, Vector2( 1, 360 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=8]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.5, 0.111364 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Animation" id=4]
+resource_name = "rotate"
+length = 4.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("bookA:rotation_degrees:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("bookA:rotation_degrees:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 360, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 4 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("bookA:rotation_degrees:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/3/type = "transform"
+tracks/3/path = NodePath("bookA")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, -0.852514, 0, 0.522705, 1, 1, 1, 2, 1, 0, 1, 0, 0, -0.852514, 0, 0.522705, 1, 1, 1, 4, 1, 0, 0, 0, 0, 0.18525, 0, 0.982691, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 32
+outline_size = 2
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.101961, 0.215686, 0.309804, 0.709804 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.8, 0.8, 0.8, 0.772549 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Level" type="Spatial"]
+script = ExtResource( 5 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -0.494033, 0.869443, 0, -0.869443, -0.494033, 0, 14.0153, 0 )
+light_energy = 3.0
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 4, 1, 4 )
+data = {
+"cells": PoolIntArray( 1, 1, 95, 2, 1, 95, 3, 1, 95, 4, 1, 95, 5, 1, 100, 6, 1, 95, 7, 1, 95, 8, 1, 95, 65537, 1, 1048685, 65538, 1, 108, 65539, 1, 108, 65540, 1, 108, 65541, 1, 124, 65542, 1, 108, 65543, 1, 108, 65544, 1, 109, 131076, 1, 106, 131078, 1, 106, 1, 2, 95, 2, 2, 95, 3, 2, 95, 4, 2, 95, 5, 2, 100, 6, 2, 95, 7, 2, 95, 8, 2, 95, 65537, 2, 1048684, 65544, 2, 1048684, 1, 3, 95, 2, 3, 95, 3, 3, 95, 4, 3, 95, 5, 3, 100, 6, 3, 95, 7, 3, 95, 8, 3, 95, 65537, 3, 1048684, 65539, 3, 41, 65543, 3, 41, 65544, 3, 1048684, 1, 4, 95, 2, 4, 95, 3, 4, 95, 4, 4, 655463, 5, 4, 100, 6, 4, 95, 7, 4, 95, 8, 4, 95, 65537, 4, 1048684, 65544, 4, 1048684, 1, 5, 95, 2, 5, 95, 3, 5, 95, 4, 5, 95, 5, 5, 100, 6, 5, 95, 7, 5, 95, 8, 5, 95, 65537, 5, 1048684, 65539, 5, 41, 65543, 5, 42, 65544, 5, 1048684, 1, 6, 95, 2, 6, 95, 3, 6, 95, 4, 6, 95, 5, 6, 100, 6, 6, 95, 7, 6, 95, 8, 6, 95, 65537, 6, 655469, 65538, 6, 108, 65539, 6, 108, 65540, 6, 108, 65541, 6, 124, 65542, 6, 108, 65543, 6, 108, 65544, 6, 1441901, 131076, 6, 655466, 131078, 6, 655466, 5, 7, 100 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 1, 0 )
+}
+
+[node name="character_rogue" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1.5, 14 )
+script = ExtResource( 3 )
+
+[node name="Cursor" type="Spatial" parent="."]
+
+[node name="Sprite" type="Sprite3D" parent="Cursor"]
+transform = Transform( 0.49008, 0, 0, 0, 0.49008, 0, 0, 0, 0.49008, 11, 2, 14 )
+axis = 1
+texture = ExtResource( 4 )
+
+[node name="Animation" type="AnimationPlayer" parent="Cursor"]
+autoplay = "pulse"
+anims/pulse = SubResource( 3 )
+
+[node name="Camera" type="Camera" parent="Cursor"]
+transform = Transform( -1, 3.10073e-08, -8.17392e-08, -4.9956e-08, 0.564621, 0.82535, 7.17436e-08, 0.82535, -0.564621, 11, 12.5682, 6.23395 )
+environment = SubResource( 2 )
+current = true
+
+[node name="Item" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 2, 21.608 )
+
+[node name="bookA" type="MeshInstance" parent="Item"]
+transform = Transform( 0.35225, 0, -0.935906, 0, 1, 0, 0.935906, 0, 0.35225, 0, 0.418588, 0 )
+mesh = ExtResource( 6 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="CPUParticles" type="CPUParticles" parent="Item/bookA"]
+amount = 16
+randomness = 0.5
+lifetime_randomness = 0.61
+mesh = SubResource( 6 )
+emission_shape = 1
+emission_sphere_radius = 0.5
+direction = Vector3( 1, 1, 1 )
+spread = 180.0
+gravity = Vector3( 0, 8, 0 )
+angular_velocity = -26.42
+angular_velocity_random = 1.0
+radial_accel = 2.0
+angle_curve = SubResource( 7 )
+scale_amount_curve = SubResource( 8 )
+color = Color( 0.792157, 0.839216, 0, 0.298039 )
+
+[node name="Animation" type="AnimationPlayer" parent="Item"]
+autoplay = "rotate"
+anims/rotate = SubResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+margin_left = 26.0
+margin_top = 18.0
+margin_right = 301.0
+margin_bottom = 52.0
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0.615686, 0.792157, 0.901961, 1 )
+text = "Collect Sets of Books to Win"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="center" type="Control" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu_buttons" type="VBoxContainer" parent="CanvasLayer/center"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -220.0
+margin_top = -110.0
+margin_right = 180.0
+margin_bottom = -74.0
+custom_constants/separation = 8
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="resume" type="Button" parent="CanvasLayer/center/menu_buttons"]
+margin_right = 440.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 9 )
+text = "Resume"
+
+[node name="quit" type="Button" parent="CanvasLayer/center/menu_buttons"]
+margin_top = 52.0
+margin_right = 440.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 9 )
+text = "Quit"
+
+[node name="pause_menu" type="Panel" parent="CanvasLayer/center"]
+visible = false
+margin_left = -220.0
+margin_top = -110.0
+margin_right = 220.0
+margin_bottom = 110.0
+
+[node name="bottom_center" type="Control" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inventory" type="HBoxContainer" parent="CanvasLayer/bottom_center"]
+margin_left = -241.0
+margin_top = -100.0
+margin_right = 241.0
+margin_bottom = -10.0
+custom_constants/separation = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="item" type="Panel" parent="CanvasLayer/bottom_center/inventory"]
+margin_right = 90.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 90, 90 )
+custom_styles/panel = SubResource( 10 )
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/bottom_center/inventory/item"]
+margin_right = 90.0
+margin_bottom = 90.0
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="item2" type="Panel" parent="CanvasLayer/bottom_center/inventory"]
+margin_left = 98.0
+margin_right = 188.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 90, 90 )
+custom_styles/panel = SubResource( 10 )
+
+[node name="item3" type="Panel" parent="CanvasLayer/bottom_center/inventory"]
+margin_left = 196.0
+margin_right = 286.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 90, 90 )
+custom_styles/panel = SubResource( 10 )
+
+[node name="item4" type="Panel" parent="CanvasLayer/bottom_center/inventory"]
+margin_left = 294.0
+margin_right = 384.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 90, 90 )
+custom_styles/panel = SubResource( 10 )
+
+[node name="item5" type="Panel" parent="CanvasLayer/bottom_center/inventory"]
+margin_left = 392.0
+margin_right = 482.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 90, 90 )
+custom_styles/panel = SubResource( 10 )
+
+[connection signal="pressed" from="CanvasLayer/center/menu_buttons/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/center/menu_buttons/quit" to="." method="_on_quit_pressed"]

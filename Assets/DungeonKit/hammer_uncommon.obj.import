@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/hammer_uncommon.obj-0234ff57685c5489c59ad0932ba14707.mesh"
+
+[deps]
+
+files=[ "res://.import/hammer_uncommon.obj-0234ff57685c5489c59ad0932ba14707.mesh" ]
+
+source_file="res://Assets/DungeonKit/hammer_uncommon.obj"
+dest_files=[ "res://.import/hammer_uncommon.obj-0234ff57685c5489c59ad0932ba14707.mesh", "res://.import/hammer_uncommon.obj-0234ff57685c5489c59ad0932ba14707.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

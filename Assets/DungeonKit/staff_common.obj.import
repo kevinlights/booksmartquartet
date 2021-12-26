@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/staff_common.obj-81e12cb330a0ae584197e51e8cc3b63d.mesh"
+
+[deps]
+
+files=[ "res://.import/staff_common.obj-81e12cb330a0ae584197e51e8cc3b63d.mesh" ]
+
+source_file="res://Assets/DungeonKit/staff_common.obj"
+dest_files=[ "res://.import/staff_common.obj-81e12cb330a0ae584197e51e8cc3b63d.mesh", "res://.import/staff_common.obj-81e12cb330a0ae584197e51e8cc3b63d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

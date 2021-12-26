@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/chestTop_common_empty.obj-8f055e6eb9397f99918729c85143e992.mesh"
+
+[deps]
+
+files=[ "res://.import/chestTop_common_empty.obj-8f055e6eb9397f99918729c85143e992.mesh" ]
+
+source_file="res://Assets/DungeonKit/chestTop_common_empty.obj"
+dest_files=[ "res://.import/chestTop_common_empty.obj-8f055e6eb9397f99918729c85143e992.mesh", "res://.import/chestTop_common_empty.obj-8f055e6eb9397f99918729c85143e992.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/coin.obj-a141cca29b2c16ea1f27070907b698fa.mesh"
+
+[deps]
+
+files=[ "res://.import/coin.obj-a141cca29b2c16ea1f27070907b698fa.mesh" ]
+
+source_file="res://Assets/DungeonKit/coin.obj"
+dest_files=[ "res://.import/coin.obj-a141cca29b2c16ea1f27070907b698fa.mesh", "res://.import/coin.obj-a141cca29b2c16ea1f27070907b698fa.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

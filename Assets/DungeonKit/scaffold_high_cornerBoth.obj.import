@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/scaffold_high_cornerBoth.obj-1729a3a840942bd142815b9c4b33e4ac.mesh"
+
+[deps]
+
+files=[ "res://.import/scaffold_high_cornerBoth.obj-1729a3a840942bd142815b9c4b33e4ac.mesh" ]
+
+source_file="res://Assets/DungeonKit/scaffold_high_cornerBoth.obj"
+dest_files=[ "res://.import/scaffold_high_cornerBoth.obj-1729a3a840942bd142815b9c4b33e4ac.mesh", "res://.import/scaffold_high_cornerBoth.obj-1729a3a840942bd142815b9c4b33e4ac.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

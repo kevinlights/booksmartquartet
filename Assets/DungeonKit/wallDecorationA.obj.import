@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/wallDecorationA.obj-cf1afb6b27ab7627026fb11be800d8cb.mesh"
+
+[deps]
+
+files=[ "res://.import/wallDecorationA.obj-cf1afb6b27ab7627026fb11be800d8cb.mesh" ]
+
+source_file="res://Assets/DungeonKit/wallDecorationA.obj"
+dest_files=[ "res://.import/wallDecorationA.obj-cf1afb6b27ab7627026fb11be800d8cb.mesh", "res://.import/wallDecorationA.obj-cf1afb6b27ab7627026fb11be800d8cb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

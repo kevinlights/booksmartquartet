@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/crossbow_common.obj-04ab5cf813e605e27308f3e3b61f80d2.mesh"
+
+[deps]
+
+files=[ "res://.import/crossbow_common.obj-04ab5cf813e605e27308f3e3b61f80d2.mesh" ]
+
+source_file="res://Assets/DungeonKit/crossbow_common.obj"
+dest_files=[ "res://.import/crossbow_common.obj-04ab5cf813e605e27308f3e3b61f80d2.mesh", "res://.import/crossbow_common.obj-04ab5cf813e605e27308f3e3b61f80d2.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
