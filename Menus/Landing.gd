@@ -19,10 +19,10 @@ func _ready():
 	var feed_data = load_cached_feed()
 	if feed_data:
 		render_toots(feed_data.result)
-	$fetch_mastodon_feed.request("https://fosstodon.org/api/v1/timelines/tag/fedijam")
+	$fetch_mastodon_feed.request("https://fosstodon.org/api/v1/timelines/tag/booksmartquartet")
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://Scenes/Level.tscn")
+	get_tree().change_scene("res://Components/CharacterSelector.tscn")
 
 func sanitize(html):
 	var spans = RegEx.new()
@@ -96,7 +96,8 @@ func _on_gitlab_pressed():
 	OS.shell_open("https://gitlab.com/armen138/booksmartquartets")
 
 func _on_play_pressed():
-	get_tree().change_scene("res://Levels/LevelIntro.tscn")
+#	get_tree().change_scene("res://Levels/LevelIntro.tscn")
+	get_tree().change_scene("res://Components/CharacterSelector.tscn")
 
 
 func _on_credits_pressed():

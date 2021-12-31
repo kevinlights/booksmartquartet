@@ -1,0 +1,549 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Assets/LetsTracebasic.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/DungeonKit/banner.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Assets/DungeonKit/pots.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://Resources/meshlibrary.tres" type="MeshLibrary" id=4]
+[ext_resource path="res://Assets/DungeonKit/torchWall.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://Assets/DungeonKit/weaponRack.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://Assets/DungeonKit/tableLarge.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://Assets/DungeonKit/stool.obj" type="ArrayMesh" id=8]
+[ext_resource path="res://Assets/DungeonKit/bookcaseWideFilled.obj" type="ArrayMesh" id=9]
+[ext_resource path="res://Assets/Jellee-Bold.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Resources/gui_theme.tres" type="Theme" id=11]
+[ext_resource path="res://Assets/matrix-icon.png" type="Texture" id=12]
+[ext_resource path="res://Assets/mastodon_icon.png" type="Texture" id=13]
+[ext_resource path="res://Assets/gitlab-icon-rgb.png" type="Texture" id=14]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+vertex_color_use_as_albedo = true
+params_billboard_mode = 2
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+size = Vector2( 0.1, 0.1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0.274011, 1 )
+colors = PoolColorArray( 1, 0.341176, 0.12549, 1, 0, 0, 0, 0.890196 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 144
+outline_size = 8
+outline_color = Color( 0.443137, 0.541176, 0.737255, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 96
+outline_size = 8
+outline_color = Color( 0.443137, 0.541176, 0.737255, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 52
+outline_size = 2
+outline_color = Color( 0.737255, 0.909804, 1, 0.282353 )
+use_filter = true
+font_data = ExtResource( 10 )
+
+[sub_resource type="Animation" id=9]
+resource_name = "toggle"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("social_panel:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -500, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("social_panel:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("../bottom_right/fedinews:rect_position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("../bottom_right/fedinews:rect_position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -54, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "intro"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("gui_root/center/MainMenu:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("gui_root/center/MainMenu:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("gui_root/center/MainMenu:rect_position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -220, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("gui_root/center/MainMenu:rect_position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -110, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("gui_root/bottom_left/social_buttons:rect_position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("gui_root/bottom_left/social_buttons:rect_position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -90, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("gui_root/bottom_right/fedinews:rect_position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("gui_root/bottom_right/fedinews:rect_position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -54, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("gui_root/center/Title:rect_position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( -330, -0.25, 0, 0.25, 0, -220, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("gui_root/center/Title:rect_position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( -120, -0.25, 0, 0.25, 0, -300, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("gui_root/center/Title:rect_scale:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 1.5, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("gui_root/center/Title:rect_scale:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( 1.5, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Spatial" type="Spatial" parent="."]
+
+[node name="GridMap" type="GridMap" parent="Spatial"]
+mesh_library = ExtResource( 4 )
+cell_size = Vector3( 4, 1, 4 )
+data = {
+"cells": PoolIntArray( 0, 0, 95, 1, 0, 95, 2, 0, 95, 3, 0, 95, 4, 0, 95, 5, 0, 95, 6, 0, 95, 7, 0, 95, 65534, 0, 95, 65535, 0, 95, 65536, 0, 108, 65537, 0, 131, 65538, 0, 108, 65539, 0, 124, 65540, 0, 108, 65541, 0, 131, 65542, 0, 108, 65543, 0, 109, 131071, 0, 1048685, 327680, 0, 95, 327681, 0, 95, 327682, 0, 95, 327683, 0, 95, 327684, 0, 95, 327685, 0, 95, 327686, 0, 95, 327687, 0, 95, 393215, 0, 95, 0, 1, 95, 1, 1, 95, 2, 1, 95, 3, 1, 95, 4, 1, 95, 5, 1, 95, 6, 1, 95, 7, 1, 95, 65534, 1, 95, 65535, 1, 95, 65543, 1, 1048684, 131071, 1, 1048684, 327680, 1, 95, 327681, 1, 95, 327682, 1, 95, 327683, 1, 95, 327684, 1, 95, 327685, 1, 95, 327686, 1, 95, 327687, 1, 95, 393214, 1, 95, 393215, 1, 95, 0, 2, 100, 1, 2, 100, 2, 2, 100, 3, 2, 95, 4, 2, 100, 5, 2, 100, 6, 2, 95, 7, 2, 95, 65534, 2, 95, 65535, 2, 95, 65543, 2, 1048684, 131071, 2, 1048684, 327680, 2, 95, 327681, 2, 95, 327682, 2, 95, 327683, 2, 95, 327684, 2, 95, 327685, 2, 95, 327686, 2, 95, 327687, 2, 95, 393214, 2, 95, 393215, 2, 95, 0, 3, 100, 1, 3, 99, 2, 3, 100, 3, 3, 95, 4, 3, 100, 5, 3, 100, 6, 3, 95, 7, 3, 95, 65534, 3, 95, 65535, 3, 95, 65543, 3, 1048684, 131071, 3, 1048684, 327680, 3, 95, 327681, 3, 95, 327682, 3, 95, 327683, 3, 95, 327684, 3, 95, 327685, 3, 95, 327686, 3, 95, 327687, 3, 95, 393215, 3, 95, 0, 4, 100, 1, 4, 100, 2, 4, 100, 3, 4, 95, 4, 4, 100, 5, 4, 100, 6, 4, 95, 7, 4, 95, 65534, 4, 95, 65535, 4, 95, 65543, 4, 1048684, 131071, 4, 1048684, 327680, 4, 95, 327681, 4, 95, 327682, 4, 95, 327683, 4, 95, 327684, 4, 95, 327685, 4, 95, 327686, 4, 95, 327687, 4, 95, 393215, 4, 95, 0, 5, 100, 1, 5, 100, 2, 5, 100, 3, 5, 95, 4, 5, 100, 5, 5, 100, 6, 5, 95, 7, 5, 95, 65534, 5, 95, 65535, 5, 95, 65543, 5, 1048684, 131071, 5, 1048684, 327680, 5, 95, 327681, 5, 95, 327682, 5, 95, 327683, 5, 95, 327684, 5, 95, 327685, 5, 95, 327686, 5, 95, 327687, 5, 95, 393215, 5, 95, 0, 6, 95, 1, 6, 95, 2, 6, 95, 3, 6, 95, 4, 6, 95, 5, 6, 95, 6, 6, 95, 7, 6, 95, 65534, 6, 95, 65535, 6, 95, 65543, 6, 1048684, 131071, 6, 1048684, 0, 65534, 95, 1, 65534, 95, 2, 65534, 95, 3, 65534, 95, 4, 65534, 95, 5, 65534, 95, 6, 65534, 95, 7, 65534, 95, 65535, 65534, 95, 65536, 65534, 108, 65537, 65534, 108, 65538, 65534, 108, 65539, 65534, 108, 65540, 65534, 108, 65541, 65534, 108, 65542, 65534, 108, 65543, 65534, 108, 131071, 65534, 108, 0, 65535, 95, 1, 65535, 95, 2, 65535, 95, 3, 65535, 95, 4, 65535, 95, 5, 65535, 95, 6, 65535, 95, 7, 65535, 95, 65535, 65535, 95, 327680, 65535, 95, 327681, 65535, 95 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 5, 0 )
+}
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Spatial"]
+transform = Transform( 0.794955, 0.499124, -0.34485, 0, 0.568433, 0.82273, 0.606668, -0.654033, 0.451878, 0, 14.5493, 0 )
+
+[node name="banner" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 4.5, 2.6 )
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="banner2" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 4.5, 2.6 )
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="torchWall" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 3, 2.5 )
+mesh = ExtResource( 5 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="CPUParticles" type="CPUParticles" parent="Spatial/torchWall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5 )
+amount = 32
+randomness = 1.0
+lifetime_randomness = 1.0
+mesh = SubResource( 2 )
+emission_shape = 1
+emission_sphere_radius = 0.1
+direction = Vector3( 0, 1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 4, 0 )
+scale_amount_curve = SubResource( 3 )
+color_ramp = SubResource( 4 )
+
+[node name="OmniLight" type="OmniLight" parent="Spatial/torchWall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.5 )
+light_color = Color( 0.819608, 0.690196, 0, 1 )
+light_energy = 6.0
+light_indirect_energy = 3.0
+
+[node name="torchWall2" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 3, 2.5 )
+mesh = ExtResource( 5 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="CPUParticles" type="CPUParticles" parent="Spatial/torchWall2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5 )
+amount = 32
+randomness = 1.0
+lifetime_randomness = 1.0
+mesh = SubResource( 2 )
+emission_shape = 1
+emission_sphere_radius = 0.1
+direction = Vector3( 0, 1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 4, 0 )
+scale_amount_curve = SubResource( 3 )
+color_ramp = SubResource( 4 )
+
+[node name="OmniLight" type="OmniLight" parent="Spatial/torchWall2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.5 )
+light_color = Color( 0.819608, 0.690196, 0, 1 )
+light_energy = 6.0
+light_indirect_energy = 3.0
+
+[node name="weaponRack" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.5, 3 )
+mesh = ExtResource( 6 )
+material/0 = null
+
+[node name="tableLarge" type="MeshInstance" parent="Spatial"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 10.5, 1.5, 10 )
+mesh = ExtResource( 7 )
+material/0 = null
+
+[node name="stool" type="MeshInstance" parent="Spatial"]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 12, 1.5, 8 )
+mesh = ExtResource( 8 )
+material/0 = null
+
+[node name="pots" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 1.5, 3.5 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="bookcaseWideFilled" type="MeshInstance" parent="Spatial"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 1.5, 7 )
+mesh = ExtResource( 9 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="LandingMenu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_right = -2.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gui_root" type="CanvasLayer" parent="LandingMenu"]
+
+[node name="bottom_right" type="Control" parent="LandingMenu/gui_root"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fedinews" type="Button" parent="LandingMenu/gui_root/bottom_right"]
+margin_left = -281.0
+margin_right = -14.0
+margin_bottom = 40.0
+theme = ExtResource( 11 )
+text = "News from the Fediverse"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="top_center" type="Control" parent="LandingMenu/gui_root"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bottom_left" type="Control" parent="LandingMenu/gui_root"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="social_buttons" type="HBoxContainer" parent="LandingMenu/gui_root/bottom_left"]
+margin_left = 14.0
+margin_right = 258.0
+margin_bottom = 76.0
+custom_constants/separation = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mastodon" type="Button" parent="LandingMenu/gui_root/bottom_left/social_buttons"]
+margin_right = 76.0
+margin_bottom = 76.0
+hint_tooltip = "Armen on Fosstodon"
+icon = ExtResource( 13 )
+flat = true
+
+[node name="matrix" type="Button" parent="LandingMenu/gui_root/bottom_left/social_buttons"]
+margin_left = 84.0
+margin_right = 160.0
+margin_bottom = 76.0
+hint_tooltip = "The FediJam Matrix channel"
+icon = ExtResource( 12 )
+flat = true
+
+[node name="gitlab" type="Button" parent="LandingMenu/gui_root/bottom_left/social_buttons"]
+margin_left = 168.0
+margin_right = 244.0
+margin_bottom = 76.0
+hint_tooltip = "Source code on GitLab"
+icon = ExtResource( 14 )
+flat = true
+
+[node name="center" type="Control" parent="LandingMenu/gui_root"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="LandingMenu/gui_root/center"]
+margin_left = -330.0
+margin_top = -120.0
+margin_right = 110.0
+margin_bottom = 34.0
+rect_scale = Vector2( 1.5, 1.5 )
+theme = ExtResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "BookSmart"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SubTitle" type="Label" parent="LandingMenu/gui_root/center/Title"]
+margin_top = 80.0
+margin_right = 440.0
+margin_bottom = 234.0
+theme = ExtResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "quartets"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="VBoxContainer" parent="LandingMenu/gui_root/center"]
+margin_right = 440.0
+margin_bottom = 220.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+custom_constants/separation = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="play" type="Button" parent="LandingMenu/gui_root/center/MainMenu"]
+margin_right = 440.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 8 )
+text = "Play"
+
+[node name="credits" type="Button" parent="LandingMenu/gui_root/center/MainMenu"]
+margin_top = 76.0
+margin_right = 440.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 8 )
+text = "Credits"
+
+[node name="quit" type="Button" parent="LandingMenu/gui_root/center/MainMenu"]
+margin_top = 152.0
+margin_right = 440.0
+margin_bottom = 220.0
+custom_fonts/font = SubResource( 8 )
+text = "Quit"
+
+[node name="top_right" type="Control" parent="LandingMenu/gui_root"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 38.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="social_panel" type="Panel" parent="LandingMenu/gui_root/top_right"]
+anchor_bottom = 1.0
+margin_right = 500.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="social_scroller" type="ScrollContainer" parent="LandingMenu/gui_root/top_right/social_panel"]
+anchor_bottom = 1.0
+margin_right = 500.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="margin" type="MarginContainer" parent="LandingMenu/gui_root/top_right/social_panel/social_scroller"]
+
+[node name="social" type="VBoxContainer" parent="LandingMenu/gui_root/top_right/social_panel/social_scroller/margin"]
+custom_constants/separation = 8
+
+[node name="close_fedinews" type="Button" parent="LandingMenu/gui_root/top_right/social_panel"]
+margin_left = 436.0
+margin_top = 23.0
+margin_right = 478.0
+margin_bottom = 61.0
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="animate_social" type="AnimationPlayer" parent="LandingMenu/gui_root/top_right"]
+anims/toggle = SubResource( 9 )
+
+[node name="fetch_mastodon_feed" type="HTTPRequest" parent="LandingMenu"]
+
+[node name="press_any_key" type="AnimationPlayer" parent="LandingMenu"]
+anims/intro = SubResource( 5 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 2.5, 8.5 )
+
+[connection signal="pressed" from="LandingMenu/gui_root/bottom_right/fedinews" to="LandingMenu" method="_on_fedinews_pressed"]
+[connection signal="pressed" from="LandingMenu/gui_root/bottom_left/social_buttons/mastodon" to="LandingMenu" method="_on_mastodon_pressed"]
+[connection signal="pressed" from="LandingMenu/gui_root/bottom_left/social_buttons/matrix" to="LandingMenu" method="_on_matrix_pressed"]
+[connection signal="pressed" from="LandingMenu/gui_root/bottom_left/social_buttons/gitlab" to="LandingMenu" method="_on_gitlab_pressed"]
+[connection signal="pressed" from="LandingMenu/gui_root/center/MainMenu/play" to="LandingMenu" method="_on_play_pressed"]
+[connection signal="pressed" from="LandingMenu/gui_root/center/MainMenu/credits" to="LandingMenu" method="_on_credits_pressed"]
+[connection signal="pressed" from="LandingMenu/gui_root/center/MainMenu/quit" to="LandingMenu" method="_on_quit_pressed"]
+[connection signal="pressed" from="LandingMenu/gui_root/top_right/social_panel/close_fedinews" to="LandingMenu" method="_on_close_fedinews_pressed"]
+[connection signal="request_completed" from="LandingMenu/fetch_mastodon_feed" to="LandingMenu" method="_on_fetch_mastodon_feed_request_completed"]
