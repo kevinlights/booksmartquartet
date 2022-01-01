@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/gui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Menus/MenuBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Menus/Credits.gd" type="Script" id=3]
+
+[node name="Credits" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Spatial" parent="." instance=ExtResource( 2 )]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="center" type="Control" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="CanvasLayer/center"]
+margin_left = -200.0
+margin_top = -200.0
+margin_right = 200.0
+margin_bottom = 200.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/center/Panel"]
+margin_left = 16.0
+margin_top = 19.0
+margin_right = 383.0
+margin_bottom = 291.0
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[b]BookSmart Quartets[/b] 
+A game designed and developed by [i]Armen138[/i]. 
+
+Assets used under license:
+
+Magic Books (cc0)
+KayKit Dungeon Pack (cc0)
+Jellee Bold (OFL)
+LetsTrace (OFL)
+
+Asset attributions  listed in readme.md "
+text = "BookSmart Quartets 
+A game designed and developed by Armen138. 
+
+Assets used under license:
+
+Magic Books (cc0)
+KayKit Dungeon Pack (cc0)
+Jellee Bold (OFL)
+LetsTrace (OFL)
+
+Asset attributions  listed in readme.md "
+
+[node name="Back" type="Button" parent="CanvasLayer/center/Panel"]
+margin_left = 20.0
+margin_top = 337.0
+margin_right = 381.0
+margin_bottom = 375.0
+theme = ExtResource( 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="CanvasLayer/center/Panel/Back" to="." method="_on_Back_pressed"]

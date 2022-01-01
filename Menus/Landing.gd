@@ -96,12 +96,11 @@ func _on_gitlab_pressed():
 	OS.shell_open("https://gitlab.com/armen138/booksmartquartets")
 
 func _on_play_pressed():
-#	get_tree().change_scene("res://Levels/LevelIntro.tscn")
 	get_tree().change_scene("res://Components/CharacterSelector.tscn")
 
 
 func _on_credits_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://Menus/Credits.tscn")
 
 
 func _on_quit_pressed():

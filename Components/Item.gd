@@ -3,6 +3,8 @@ extends Spatial
 
 export(String, "Blue Book", "Green Book", "Red Book", "Brown Book") var item_name = "Blue Book"
 var picked_up = false
+var creation_time = 0
+var delay_pickable = 2000
 
 var item_colors = {
 	"Blue Book": Color(0, 0.403922, 0.545098, 0.611765),
@@ -12,15 +14,15 @@ var item_colors = {
 }
 
 func _ready():
+	creation_time = OS.get_ticks_msec()
 	$CPUParticles.color = item_colors[item_name]
 
 func _on_pickup_body_entered(body):
-	if not picked_up and "is_player" in body and body.is_player:
+	var now = OS.get_ticks_msec()
+	if not picked_up and "is_player" in body and body.is_player and now - creation_time > delay_pickable:
 		picked_up = true
-		body.inventory.append(item_name)
+		body.add_to_inventory(item_name)
 		$Animation.play("pickup")
-		get_parent().writelog("[i]" + Game.player_name + "[/i] has picked up " + item_name)
-		get_parent().get_node("CanvasLayer/bottom_center/inventory").add(item_name)
 		queue_free()
 
 func _process(delta):

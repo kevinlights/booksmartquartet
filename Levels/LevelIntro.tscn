@@ -81,7 +81,18 @@ data = {
 }
 __meta__ = {
 "_editor_clip_": 0,
-"_editor_floor_": Vector3( 0, 0, 0 )
+"_editor_floor_": Vector3( 0, 1, 0 )
+}
+
+[node name="GridMap2" type="GridMap" parent="."]
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 4, 1, 4 )
+data = {
+"cells": PoolIntArray( 65544, 1, 126, 65546, 3, 1048702, 131070, 3, 1048702, 131067, 4, 1048702, 65537, 9, 127, 131067, 9, 127, 131070, 9, 127 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 1, 0 )
 }
 
 [node name="Item" parent="." instance=ExtResource( 4 )]
@@ -94,6 +105,9 @@ item_name = "Blue Book"
 [node name="Item3" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6758, 1.98681, 22.0724 )
 item_name = "Red Book"
+
+[node name="Item11" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.1579, 2.29559, 10.7051 )
 
 [node name="Item4" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0084, 1.98681, 22.0724 )
