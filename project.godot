@@ -10,11 +10,17 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
+"class": "AI_Player",
+"language": "GDScript",
+"path": "res://Game/AI_Control.gd"
+}, {
+"base": "Node",
 "class": "Avatar",
 "language": "GDScript",
 "path": "res://Menus/Avatar.gd"
 } ]
 _global_script_class_icons={
+"AI_Player": "",
 "Avatar": ""
 }
 

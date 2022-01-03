@@ -3,6 +3,7 @@ extends Spatial
 var playlog = []
 var walk_speed = 10
 var rotate_speed = 5
+var enemy_inventories = []
 enum MOVE {
 	LEFT,
 	RIGHT,
@@ -33,11 +34,23 @@ func animate():
 
 func _ready():
 	animate()
+	enemy_inventories = [
+		$CanvasLayer/top_left/EnemyInventory,
+		$CanvasLayer/top_left/EnemyInventory2,
+		$CanvasLayer/top_left/EnemyInventory3,
+	]
 	print("Player: ", Game.player_name)
 	print("Class: ", Game.player_class)
 	$Player/PlayerName.text = Game.player_name
+	$Player.player_name = Game.player_name
 	$Player.select(Game.player_class)
 	writelog("[i]" + Game.player_name + "[/i] has entered the map!")
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	for enemy in enemies:
+		writelog("[i]" + enemy.player_name + "[/i] has come online!")
+		enemy.inventory_node = enemy_inventories.pop_front()
+		enemy.inventory_node.show()
+		enemy.inventory_node.get_node("PlayerName").text = enemy.player_name
 
 func _input(event):
 	movement[MOVE.IDLE] = true

@@ -1,8 +1,11 @@
 extends Spatial
 
+var player_name = ""
 var is_player = true
 var local = true
 var inventory = []
+var inventory_node = null
+var inventory_hidden = false
 onready var avatar = $Rogue
 
 onready var camera = get_tree().get_root().get_node("Level/CameraAnchor/FollowCamera")
@@ -18,10 +21,12 @@ func add_to_inventory(item):
 		item_drop.item_name = drop
 		item_drop.translation = translation
 		get_parent().add_child(item_drop)
-		get_parent().writelog("[i]" + Game.player_name + "[/i] has dropped " + drop)
-	get_parent().writelog("[i]" + Game.player_name + "[/i] has picked up " + item)
-	get_parent().get_node("CanvasLayer/bottom_center/inventory").set_items(inventory)
-
+		get_parent().writelog("[i]" + player_name + "[/i] has dropped " + drop)
+	get_parent().writelog("[i]" + player_name + "[/i] has picked up " + item)
+	if local:
+		get_parent().get_node("CanvasLayer/bottom_center/inventory").set_items(inventory)
+	elif inventory_node:
+		inventory_node.get_node("Inventory").set_items(inventory)
 func remove_from_inventory(item):
 	pass
 

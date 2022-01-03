@@ -2,8 +2,8 @@
 
 * [x] Load correct avatar based on class selection
 * [x] Allow climbing stairs
-* [ ] Add AI player
-* [ ] Add opponent inventory UI
+* [x] Add AI player
+* [x] Add opponent inventory UI
 * [x] Force drop first item when inventory full
 * [ ] Implement special ability: hide
 * [ ] Implement special ability: camouflage

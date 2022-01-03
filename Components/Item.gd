@@ -17,6 +17,10 @@ func _ready():
 	creation_time = OS.get_ticks_msec()
 	$CPUParticles.color = item_colors[item_name]
 
+func is_pickable():
+	var now = OS.get_ticks_msec()
+	return now - creation_time > delay_pickable
+
 func _on_pickup_body_entered(body):
 	var now = OS.get_ticks_msec()
 	if not picked_up and "is_player" in body and body.is_player and now - creation_time > delay_pickable:
