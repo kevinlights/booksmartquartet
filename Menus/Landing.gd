@@ -113,3 +113,7 @@ func _on_fedinews_pressed():
 
 func _on_close_fedinews_pressed():
 	$gui_root/top_right/animate_social.play("toggle")
+
+
+func _on_options_pressed():
+	get_tree().change_scene("res://Menus/Options.tscn")

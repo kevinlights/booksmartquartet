@@ -13,3 +13,8 @@
 * [x] Create bigger map
 * [ ] Add Background Music
 * [ ] Add sound effects
+* [ ] Save settings to disk
+
+Optional items:
+
+* [ ] Add minimap showing book locations

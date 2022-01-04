@@ -8,6 +8,12 @@ In order to win, a player must collect 4 matching books. The book inventory of o
 * Camouflage: a book presents as a different color (ranger/barbarian)
 * Sneak: hide inventory from other players (rogue)
 
+## Revised abilities
+
+* Pickpocket, take a book from an opponent when in range (rogue)
+* Stomp - stomping near an enemy causes them to drop a book (barbarian)
+* Book Exchange - spell will exchange books from medium distance (mage)
+
 ## Inventory limit
 
 The player inventory can hold 5 items. If a sixth item is acquired, the first is dropped.

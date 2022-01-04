@@ -32,6 +32,10 @@ func animate():
 		$Player.play("run")
 #		$Player/Rogue/AnimationPlayer.play("run")
 
+func apply_settings():
+	if Game.shadows:
+		$DirectionalLight.shadow_enabled = true
+
 func _ready():
 	animate()
 	enemy_inventories = [
@@ -51,6 +55,7 @@ func _ready():
 		enemy.inventory_node = enemy_inventories.pop_front()
 		enemy.inventory_node.show()
 		enemy.inventory_node.get_node("PlayerName").text = enemy.player_name
+	apply_settings()
 
 func _input(event):
 	movement[MOVE.IDLE] = true
@@ -70,8 +75,10 @@ func _input(event):
 		movement[MOVE.LEFT] = false
 	if event.is_action_released("right"):
 		movement[MOVE.RIGHT] = false
+	if event.is_action_pressed("action"):
+		$Player.perform_action()
 	if event.is_action_pressed("pause"):
-		get_tree().paused = true
+		get_tree().paused = true		
 		$CanvasLayer/center/menu_buttons.show()
 	for direction in movement:
 		if movement[direction] and direction != MOVE.IDLE:
