@@ -86,7 +86,7 @@ func _input(event):
 	animate()
 
 func _physics_process(delta):
-	var move_vector = Vector3()	
+	var move_vector = Vector3()
 	if movement[MOVE.FORWARD]:
 		move_vector.z = -1
 	if movement[MOVE.BACK]:
@@ -96,7 +96,7 @@ func _physics_process(delta):
 	if movement[MOVE.RIGHT]:
 		move_vector.x = 1
 #	move_vector.y = 0.5 #gravity
-	if !$Player.is_on_wall():
+	if !$Player.is_on_wall() and !$Player.is_on_floor():
 		move_vector.y = 0.5
 	$Player.move_and_slide (-1 * walk_speed * move_vector, Vector3(0, 1, 0))
 	var move_normal = Vector3(move_vector.x, 0, move_vector.z)

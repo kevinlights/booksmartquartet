@@ -1209,7 +1209,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.5, 11 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.8806, 11 )
 
 [node name="AI_Player" parent="." groups=["enemies"] instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.5, -6.87628 )
