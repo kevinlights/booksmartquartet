@@ -1,7 +1,7 @@
 pipeline {
 	agent {
 		docker {
-			image 'barichello/godot-ci:3.3.2'
+			image 'barichello/godot-ci:3.4.2'
 			args '-u root --privileged'
 		}
 	}
