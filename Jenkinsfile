@@ -39,7 +39,8 @@ pipeline {
 		stage('Build HTML5') {
 			steps {
 				echo 'Building for HTML5'
-				sh "godot -v --export 'HTML5' './${ITCHIO_GAME}_web/index.html'"
+				sh "mkdir -v -p ${ITCHIO_GAME}_web"
+				sh "godot -v --export 'HTML5' ./${ITCHIO_GAME}_web/index.html"
 				sh "zip -r ${ITCHIO_GAME}_web.zip %{ITCHIO_GAME}_web"
 				archiveArtifacts artifacts: '${ITCHIO_GAME}_web.zip', fingerprint: true
 			}
