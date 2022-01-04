@@ -40,6 +40,7 @@ pipeline {
 			steps {
 				echo 'Building for HTML5'
 				sh "mkdir -v -p ${ITCHIO_GAME}_web"
+				sh "echo 'quality/driver/driver_name=\"GLES2\"' >> project.godot"
 				sh "godot -v --export 'HTML5' ./${ITCHIO_GAME}_web/index.html"
 				sh "zip -r ${ITCHIO_GAME}_web.zip ${ITCHIO_GAME}_web"
 				archiveArtifacts artifacts: '*.zip', fingerprint: true
