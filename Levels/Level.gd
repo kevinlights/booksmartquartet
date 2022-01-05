@@ -98,6 +98,7 @@ func _physics_process(delta):
 #	move_vector.y = 0.5 #gravity
 	if !$Player.is_on_wall() and !$Player.is_on_floor():
 		move_vector.y = 0.5
+#	if move_vector.x != 0 or move_vector.z != 0:
 	$Player.move_and_slide (-1 * walk_speed * move_vector, Vector3(0, 1, 0))
 	var move_normal = Vector3(move_vector.x, 0, move_vector.z)
 	var target_position = $Player.transform.origin + move_normal

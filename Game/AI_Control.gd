@@ -81,7 +81,7 @@ func get_target():
 		if enemy.player_name != player.player_name:
 			for book_type in book_types:
 				if !enemy.inventory_hidden and enemy.inventory.count(book_type) == 3 and is_book_on_map(book_type):
-					print("Player " + enemy.player_name + " needs to be prevented from getting all " + book_type)
+#					print("Player " + enemy.player_name + " needs to be prevented from getting all " + book_type)
 					need = book_type 
 	if !is_book_on_map(need):
 		for book_type in book_types:
