@@ -1160,7 +1160,7 @@ bones/5/enabled = true
 bones/5/bound_children = [  ]
 
 [node name="Body" type="BoneAttachment" parent="KayKit Animated Character"]
-transform = Transform( 1, 0, 0, 0, 0.999541, 0.0303055, 0, -0.0303055, 0.999541, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 0.999999, 0.00103886, 0, -0.00103886, 0.999999, 0, 0, 0 )
 bone_name = "Body"
 
 [node name="character_rogueBody" type="MeshInstance" parent="KayKit Animated Character/Body"]
@@ -1172,7 +1172,7 @@ material/2 = null
 material/3 = null
 
 [node name="Head" type="BoneAttachment" parent="KayKit Animated Character"]
-transform = Transform( 1, 0, 0, 0, 0.99474, -0.102429, 0, 0.102429, 0.99474, 0, 0.711271, -0.0215654 )
+transform = Transform( 1, 0, 0, 0, 0.99599, -0.0894675, 0, 0.0894675, 0.99599, 0, 0.711598, -0.000739251 )
 bone_name = "Head"
 
 [node name="character_rogueHead" type="MeshInstance" parent="KayKit Animated Character/Head"]
@@ -1187,7 +1187,7 @@ mesh = SubResource( 5 )
 material/0 = null
 
 [node name="ArmLeft" type="BoneAttachment" parent="KayKit Animated Character"]
-transform = Transform( 7.75616e-07, 0.534317, -0.845284, -0.0303055, -0.844896, -0.534071, -0.999541, 0.0256172, 0.0161921, 0.14, 0.69128, -0.0209593 )
+transform = Transform( 9.49968e-07, 0.473754, -0.880657, -0.00103883, -0.880656, -0.473754, -0.999999, 0.000915304, 0.000491314, 0.14, 0.691598, -0.000718474 )
 bone_name = "armLeft"
 
 [node name="character_rogueArmLeft" type="MeshInstance" parent="KayKit Animated Character/ArmLeft"]
@@ -1198,7 +1198,7 @@ material/1 = null
 material/2 = null
 
 [node name="ArmRight" type="BoneAttachment" parent="KayKit Animated Character"]
-transform = Transform( -0.01673, -0.509214, -0.860477, -0.362465, -0.798969, 0.479862, -0.931847, 0.319921, -0.171206, -0.14, 0.69128, -0.0209593 )
+transform = Transform( -0.000810608, -0.473651, -0.880712, -0.335456, -0.829551, 0.446445, -0.942055, 0.295803, -0.158217, -0.14, 0.691598, -0.000718474 )
 bone_name = "armRight"
 
 [node name="character_rogueArmRight" type="MeshInstance" parent="KayKit Animated Character/ArmRight"]

@@ -6,13 +6,6 @@ onready var player = get_parent()
 var walk_speed = 10
 var rotate_speed = 5
 
-var book_types = [ 
-	"Red Book",
-	"Green Book",
-	"Brown Book",
-	"Blue Book"
-]
-
 var bot_names = [
 	"Boten Anna",
 	"Skynet",
@@ -41,10 +34,13 @@ var path = []
 func init_bot():
 	randomize()
 	bot_names.shuffle()
-	book_types.shuffle()
+	Game.book_types.shuffle()
+	var player_classes = [ "Rogue", "Mage", "Barbarian" ]
+	player_classes.shuffle()
 	player.player_name = bot_names[0]
 	player.get_node("PlayerName").text = player.player_name
-	want = book_types[0]
+	player.select(player_classes[0])
+	want = Game.book_types[0]
 	home = player.translation
 
 func _ready():
@@ -79,12 +75,12 @@ func get_target():
 	var players = get_tree().get_nodes_in_group("players")
 	for enemy in players:
 		if enemy.player_name != player.player_name:
-			for book_type in book_types:
+			for book_type in Game.book_types:
 				if !enemy.inventory_hidden and enemy.inventory.count(book_type) == 3 and is_book_on_map(book_type):
 #					print("Player " + enemy.player_name + " needs to be prevented from getting all " + book_type)
 					need = book_type 
 	if !is_book_on_map(need):
-		for book_type in book_types:
+		for book_type in Game.book_types:
 			if is_book_on_map(book_type):
 				need = book_type
 	for book in books:

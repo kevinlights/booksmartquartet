@@ -25,12 +25,13 @@ func writelog(item):
 	$CanvasLayer/top_right/Log.bbcode_text = PoolStringArray(playlog).join("\n")
 
 func animate():
+	var dont_interrupt = [ "cheer", "attack", "defeat" ]
+	if $Player.current_animation() in dont_interrupt:
+		return
 	if movement[MOVE.IDLE]:
 		$Player.play("idle")
-#		$Player/Rogue/AnimationPlayer.play("idle")
 	else:
 		$Player.play("run")
-#		$Player/Rogue/AnimationPlayer.play("run")
 
 func apply_settings():
 	if Game.shadows:
@@ -95,15 +96,15 @@ func _physics_process(delta):
 		move_vector.x = -1
 	if movement[MOVE.RIGHT]:
 		move_vector.x = 1
-#	move_vector.y = 0.5 #gravity
 	if !$Player.is_on_wall() and !$Player.is_on_floor():
 		move_vector.y = 0.5
-#	if move_vector.x != 0 or move_vector.z != 0:
+
+		
 	$Player.move_and_slide (-1 * walk_speed * move_vector, Vector3(0, 1, 0))
-	var move_normal = Vector3(move_vector.x, 0, move_vector.z)
+	var move_normal     = Vector3(move_vector.x, 0, move_vector.z)
 	var target_position = $Player.transform.origin + move_normal
-	var new_transform = $Player.transform.looking_at(target_position, Vector3.UP)
-	$Player.transform  = $Player.transform.interpolate_with(new_transform, rotate_speed * delta)
+	var new_transform   = $Player.transform.looking_at(target_position, Vector3.UP)
+	$Player.transform   = $Player.transform.interpolate_with(new_transform, rotate_speed * delta)
 
 func _on_resume_pressed():
 	get_tree().paused = false

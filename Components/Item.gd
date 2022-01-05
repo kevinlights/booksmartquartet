@@ -27,6 +27,7 @@ func _on_pickup_body_entered(body):
 		picked_up = true
 		body.add_to_inventory(item_name)
 		$Animation.play("pickup")
+		body.play("cheer")
 		queue_free()
 
 func _process(delta):

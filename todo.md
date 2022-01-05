@@ -5,7 +5,7 @@
 * [x] Add AI player
 * [x] Add opponent inventory UI
 * [x] Force drop first item when inventory full
-* [ ] Implement special ability: hide
+* [x] Implement special ability: pickpocket
 * [ ] Implement special ability: camouflage
 * [ ] Implement special ability: mirage
 * [ ] Add win condition

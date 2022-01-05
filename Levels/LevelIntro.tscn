@@ -1185,6 +1185,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ActionHint" type="Label" parent="CanvasLayer/bottom_center"]
+visible = false
+margin_left = -200.0
+margin_top = -140.0
+margin_right = 200.0
+margin_bottom = -106.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "<SPACE> to pickpocket [name] "
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="top_right" type="Control" parent="CanvasLayer"]
 anchor_left = 1.0
 anchor_right = 1.0
