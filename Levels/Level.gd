@@ -25,13 +25,13 @@ func writelog(item):
 	$CanvasLayer/top_right/Log.bbcode_text = PoolStringArray(playlog).join("\n")
 
 func animate():
-	var dont_interrupt = [ "cheer", "attack", "defeat" ]
-	if $Player.current_animation() in dont_interrupt:
-		return
+	if $Player.current_animation() in Game.dont_interrupt:
+		return false
 	if movement[MOVE.IDLE]:
 		$Player.play("idle")
 	else:
 		$Player.play("run")
+	return true
 
 func apply_settings():
 	if Game.shadows:
@@ -79,7 +79,7 @@ func _input(event):
 	if event.is_action_pressed("action"):
 		$Player.perform_action()
 	if event.is_action_pressed("pause"):
-		get_tree().paused = true		
+		get_tree().paused = true
 		$CanvasLayer/center/menu_buttons.show()
 	for direction in movement:
 		if movement[direction] and direction != MOVE.IDLE:
@@ -99,12 +99,18 @@ func _physics_process(delta):
 	if !$Player.is_on_wall() and !$Player.is_on_floor():
 		move_vector.y = 0.5
 
-		
-	$Player.move_and_slide (-1 * walk_speed * move_vector, Vector3(0, 1, 0))
-	var move_normal     = Vector3(move_vector.x, 0, move_vector.z)
-	var target_position = $Player.transform.origin + move_normal
-	var new_transform   = $Player.transform.looking_at(target_position, Vector3.UP)
-	$Player.transform   = $Player.transform.interpolate_with(new_transform, rotate_speed * delta)
+	if !($Player.current_animation() in Game.dont_walk):
+		$Player.move_and_slide (-1 * walk_speed * move_vector, Vector3(0, 1, 0))
+		var move_normal     = Vector3(move_vector.x, 0, move_vector.z)
+		var target_position = $Player.transform.origin + move_normal
+		var new_transform   = $Player.transform.looking_at(target_position, Vector3.UP)
+		$Player.transform   = $Player.transform.interpolate_with(new_transform, rotate_speed * delta)
+
+func win(player_name, book_type):
+	get_tree().paused = true
+	$CanvasLayer/center/win/winner.text = "Winner: " + player_name
+	$CanvasLayer/center/win.get_node(book_type).show()
+	$CanvasLayer/center/win.show()
 
 func _on_resume_pressed():
 	get_tree().paused = false
@@ -114,3 +120,7 @@ func _on_resume_pressed():
 func _on_quit_pressed():
 	get_tree().paused = false
 	get_tree().change_scene("res://Menus/MainMenu.tscn")
+
+
+func _on_dismiss_win_pressed():
+	_on_quit_pressed()

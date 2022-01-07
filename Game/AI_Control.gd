@@ -49,6 +49,8 @@ func _ready():
 	player.local = false
 
 func _physics_process(delta):
+	if (player.current_animation() in Game.dont_walk):
+		return
 	if target and path.size() > 0:
 		var move_vector = -1 * player.translation.direction_to(path[0])
 		player.move_and_slide (-1 * walk_speed * move_vector, Vector3(0, 1, 0))
@@ -84,13 +86,14 @@ func get_target():
 			if is_book_on_map(book_type):
 				need = book_type
 	for book in books:
-		if book.item_name == need and book.is_pickable():
+		if book.item_name == need and book.is_pickable(player.player_name):
 			var distance =  book.translation.distance_to(player.translation)
 			if distance > 1:
 				if !closest or distance < closest.translation.distance_to(player.translation):
 					closest = book
 	target = closest
 	if target:
+		player.play("run")
 		path = player.get_parent().get_node("Navigation").get_simple_path(player.translation, target.translation)
 	elif home:
 		path = player.get_parent().get_node("Navigation").get_simple_path(player.translation, home)

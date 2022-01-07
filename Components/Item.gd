@@ -5,6 +5,7 @@ export(String, "Blue Book", "Green Book", "Red Book", "Brown Book") var item_nam
 var picked_up = false
 var creation_time = 0
 var delay_pickable = 2000
+var dropped_by
 
 var item_colors = {
 	"Blue Book": Color(0, 0.403922, 0.545098, 0.611765),
@@ -17,13 +18,15 @@ func _ready():
 	creation_time = OS.get_ticks_msec()
 	$CPUParticles.color = item_colors[item_name]
 
-func is_pickable():
+func is_pickable(player_name):
+	if player_name != dropped_by:
+		return true
 	var now = OS.get_ticks_msec()
 	return now - creation_time > delay_pickable
 
 func _on_pickup_body_entered(body):
 	var now = OS.get_ticks_msec()
-	if not picked_up and "is_player" in body and body.is_player and now - creation_time > delay_pickable:
+	if not picked_up and "is_player" in body and body.is_player and is_pickable(body.player_name):
 		picked_up = true
 		body.add_to_inventory(item_name)
 		$Animation.play("pickup")

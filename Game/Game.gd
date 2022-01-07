@@ -9,7 +9,8 @@ var book_types = [
 	"Brown Book",
 	"Blue Book"
 ]
-
+var dont_interrupt = [ "cheer", "attack", "defeat" ]
+var dont_walk = [ "defeat" ]
 # settings
 
 var shadows = false

@@ -6,9 +6,9 @@
 * [x] Add opponent inventory UI
 * [x] Force drop first item when inventory full
 * [x] Implement special ability: pickpocket
-* [ ] Implement special ability: camouflage
+* [x] Implement special ability: stomp
 * [ ] Implement special ability: mirage
-* [ ] Add win condition
+* [x] Add win condition
 * [ ] Allow network player
 * [x] Create bigger map
 * [ ] Add Background Music

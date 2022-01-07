@@ -25,7 +25,7 @@ var action_verbed = {
 var action_radius = {
 	"Rogue": 2.0,
 	"Mage": 0.0,
-	"Barbarian": 2.0
+	"Barbarian": 4.0
 }
 onready var avatar = $Rogue
 
@@ -43,10 +43,12 @@ func apply_settings():
 func add_to_inventory(item):
 	inventory.append(item)
 	if inventory.size() > 5:
+		var random_offset = Vector3(rand_range(-4, 4), 0, rand_range(-4, 4))
 		var drop = inventory.pop_front()
 		var item_drop = load("Components/Item.tscn").instance()
 		item_drop.item_name = drop
-		item_drop.translation = translation
+		item_drop.dropped_by = player_name
+		item_drop.translation = translation + random_offset
 		get_parent().add_child(item_drop)
 		get_parent().writelog("[i]" + player_name + "[/i] has dropped " + drop)
 	get_parent().writelog("[i]" + player_name + "[/i] has picked up " + item)
@@ -54,6 +56,11 @@ func add_to_inventory(item):
 		get_parent().get_node("CanvasLayer/bottom_center/inventory").set_items(inventory)
 	elif inventory_node:
 		inventory_node.get_node("Inventory").set_items(inventory)
+	for book_type in Game.book_types:
+		var count = inventory.count(book_type)
+		if count == 4:
+			print("Winner declared: " + player_name + " with book " + book_type)
+			get_parent().win(player_name, book_type)
 
 func remove_from_inventory(item):
 	inventory.erase(item)
@@ -62,13 +69,31 @@ func remove_from_inventory(item):
 	elif inventory_node:
 		inventory_node.get_node("Inventory").set_items(inventory)
 
+func drop_everything():
+	for drop in inventory:
+		var random_offset = Vector3(rand_range(-4, 4), 0, rand_range(-4, 4))
+		var item_drop = load("Components/Item.tscn").instance()
+		item_drop.item_name = drop
+		item_drop.dropped_by = player_name
+		item_drop.translation = translation + random_offset
+		get_parent().add_child(item_drop)
+		get_parent().writelog("[i]" + player_name + "[/i] has dropped " + drop)
+	inventory = []
+	if local:
+		get_parent().get_node("CanvasLayer/bottom_center/inventory").set_items(inventory)
+	elif inventory_node:
+		inventory_node.get_node("Inventory").set_items(inventory)
+
 func player_in_range():
 	var players = get_tree().get_nodes_in_group("players")
+	var target = null
 	for other in players:
+		other.get_node("targeted").hide()
 		if other.player_name != player_name:
 			if other.transform.origin.distance_to(transform.origin) < action_radius[character_class]:
-				return other
-	return null
+				other.get_node("targeted").show()
+				target = other
+	return target
 
 func transfer_trap():
 	pass
@@ -77,6 +102,7 @@ func stomp(target_player):
 	play("attack")
 	$stomp.emitting = true
 	target_player.play("defeat")
+	target_player.drop_everything()
 
 func pickpocket(target_player):
 	var want = "Blue Book"
@@ -135,6 +161,7 @@ func play(animation):
 func _process(delta):
 	var now = OS.get_ticks_msec()
 	if local:
+		var in_range = player_in_range()
 		var last_action_progress = now - last_special_action
 		if last_special_action != -1 and last_action_progress < special_action_cooldown:
 			if !cooldown_bar.visible:
@@ -145,7 +172,6 @@ func _process(delta):
 		elif cooldown_bar.visible and last_action_progress > special_action_cooldown:
 			cooldown_bar.hide()
 		else:
-			var in_range = player_in_range()
 			if in_range:
 				action_hint.show()
 				action_hint.text = "<space> to " + action_names[character_class] + " " + in_range.player_name
