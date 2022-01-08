@@ -7,14 +7,16 @@
 * [x] Force drop first item when inventory full
 * [x] Implement special ability: pickpocket
 * [x] Implement special ability: stomp
-* [ ] Implement special ability: mirage
+* [x] Implement special ability: swap trap
 * [x] Add win condition
-* [ ] Allow network player
 * [x] Create bigger map
-* [ ] Add Background Music
-* [ ] Add sound effects
-* [ ] Save settings to disk
+* [x] Add Background Music
+* [x] Add sound effects
 
 Optional items:
 
 * [ ] Add minimap showing book locations
+* [ ] Character customization (use extra heads)
+* [ ] Save settings to disk
+* [ ] Allow network player
+

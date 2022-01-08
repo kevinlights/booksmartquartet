@@ -117,3 +117,7 @@ func _on_close_fedinews_pressed():
 
 func _on_options_pressed():
 	get_tree().change_scene("res://Menus/Options.tscn")
+
+
+func _on_button_hover():
+	$hover.play()

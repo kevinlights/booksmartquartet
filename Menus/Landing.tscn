@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Resources/gui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/LetsTracebasic.otf" type="DynamicFontData" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/gitlab-icon-rgb.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Jellee-Bold.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Menus/Landing.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Effects/hint.wav" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 144
@@ -460,13 +461,25 @@ anims/toggle = SubResource( 4 )
 [node name="press_any_key" type="AnimationPlayer" parent="."]
 anims/intro = SubResource( 5 )
 
+[node name="hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[connection signal="mouse_entered" from="gui_root/bottom_right/fedinews" to="." method="_on_button_hover"]
 [connection signal="pressed" from="gui_root/bottom_right/fedinews" to="." method="_on_fedinews_pressed"]
+[connection signal="mouse_entered" from="gui_root/bottom_left/social_buttons/mastodon" to="." method="_on_button_hover"]
 [connection signal="pressed" from="gui_root/bottom_left/social_buttons/mastodon" to="." method="_on_mastodon_pressed"]
+[connection signal="mouse_entered" from="gui_root/bottom_left/social_buttons/matrix" to="." method="_on_button_hover"]
 [connection signal="pressed" from="gui_root/bottom_left/social_buttons/matrix" to="." method="_on_matrix_pressed"]
+[connection signal="mouse_entered" from="gui_root/bottom_left/social_buttons/gitlab" to="." method="_on_button_hover"]
 [connection signal="pressed" from="gui_root/bottom_left/social_buttons/gitlab" to="." method="_on_gitlab_pressed"]
+[connection signal="mouse_entered" from="gui_root/center/MainMenu/play" to="." method="_on_button_hover"]
 [connection signal="pressed" from="gui_root/center/MainMenu/play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="gui_root/center/MainMenu/credits" to="." method="_on_button_hover"]
 [connection signal="pressed" from="gui_root/center/MainMenu/credits" to="." method="_on_credits_pressed"]
+[connection signal="mouse_entered" from="gui_root/center/MainMenu/options" to="." method="_on_button_hover"]
 [connection signal="pressed" from="gui_root/center/MainMenu/options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="gui_root/center/MainMenu/quit" to="." method="_on_button_hover"]
 [connection signal="pressed" from="gui_root/center/MainMenu/quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="gui_root/top_right/social_panel/close_fedinews" to="." method="_on_button_hover"]
 [connection signal="pressed" from="gui_root/top_right/social_panel/close_fedinews" to="." method="_on_close_fedinews_pressed"]
 [connection signal="request_completed" from="fetch_mastodon_feed" to="." method="_on_fetch_mastodon_feed_request_completed"]

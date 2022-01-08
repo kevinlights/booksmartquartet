@@ -107,6 +107,7 @@ func _physics_process(delta):
 		$Player.transform   = $Player.transform.interpolate_with(new_transform, rotate_speed * delta)
 
 func win(player_name, book_type):
+	$win.play()
 	get_tree().paused = true
 	$CanvasLayer/center/win/winner.text = "Winner: " + player_name
 	$CanvasLayer/center/win.get_node(book_type).show()
@@ -124,3 +125,7 @@ func _on_quit_pressed():
 
 func _on_dismiss_win_pressed():
 	_on_quit_pressed()
+
+
+func _on_button_hover():
+	$hover.play()

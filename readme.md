@@ -20,6 +20,12 @@ https://fontlibrary.org/en/font/jellee-typeface
 Font: LetsTrace (OFL):
 https://fontlibrary.org/en/font/lets-trace
 
+Music: RPG Ambience Dungeon by HitCtrl(cc-by 3.0):
+https://opengameart.org/content/rpg-ambience-dungeon
+
+Music: Castle 03 by Beau Buckley (cc-by 4.0):
+https://opengameart.org/content/castle-03
+
 ## Hey! What's this Fediverse stuff?
 
 The Fediverse is a network of individually hosted, federated services.

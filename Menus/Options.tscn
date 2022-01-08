@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Resources/gui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Menus/MenuBackground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Menus/Options.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Effects/hint.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Effects/interact.wav" type="AudioStream" id=5]
 
 [node name="Options" type="Spatial"]
 script = ExtResource( 3 )
@@ -49,6 +51,9 @@ margin_right = 380.0
 margin_bottom = 67.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Enable shadows"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="fullscreen" type="CheckButton" parent="CanvasLayer/center/Panel"]
 margin_left = 20.0
@@ -61,6 +66,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="toggle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="mouse_entered" from="CanvasLayer/center/Panel/Back" to="." method="_on_button_hover"]
 [connection signal="pressed" from="CanvasLayer/center/Panel/Back" to="." method="_on_Back_pressed"]
 [connection signal="toggled" from="CanvasLayer/center/Panel/enable_shadows" to="." method="_on_enable_shadows_toggled"]
 [connection signal="toggled" from="CanvasLayer/center/Panel/fullscreen" to="." method="_on_fullscreen_toggled"]

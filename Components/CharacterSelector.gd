@@ -59,13 +59,13 @@ var options = [ "Barbarian", "Rogue", "Mage" ]
 var current = 1
 var descriptions = {
 	"Rogue": """[b]Rogue[/b]
-The Rogue can use the [i]Hide[/i] ability, to conceal their inventory from opponents.
+The Rogue can use the [i]pickpocket[/i] short range ability, to steal a book from opponents.
 """,
 	"Mage": """[b]Mage[/b]
-The Mage can use the [i]Mirage[/i] ability, which creates a false book on the map.
+The Mage can use the [i]swap trap[/i] ability, which will swap a book with an opponent who triggers the trap.
 """,
 	"Barbarian": """[b]Barbarian[/b]
-The barbarian knows his way around a bucket of paint - he can use the [i]Camouflage[/i] ability to disguise a book as another one
+The barbarian can use the [i]stomp[/i] ability to intimidate opponents into dropping all their books.
 """
 }
 
@@ -111,3 +111,7 @@ func _on_start_pressed():
 	Game.player_name = $CanvasLayer/top_center/Panel/MarginContainer/VBoxContainer/player_name.text
 	get_tree().change_scene("res://Levels/LevelIntro.tscn")
 
+
+
+func _on_button_hover():
+	$hover.play()

@@ -10,7 +10,12 @@ func _on_Back_pressed():
 
 func _on_fullscreen_toggled(button_pressed):
 	Game.set_fullscreen(button_pressed)
+	$toggle.play()
 
 
 func _on_enable_shadows_toggled(button_pressed):
 	Game.shadows = button_pressed
+	$toggle.play()
+
+func _on_button_hover():
+	$hover.play()

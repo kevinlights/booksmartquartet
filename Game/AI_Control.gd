@@ -40,8 +40,12 @@ func init_bot():
 	player.player_name = bot_names[0]
 	player.get_node("PlayerName").text = player.player_name
 	player.select(player_classes[0])
+	player.avatar.get_node("AnimationPlayer").connect("animation_finished", self, "_on_player_animation_finished")
 	want = Game.book_types[0]
 	home = player.translation
+
+func _on_player_animation_finished(animation):
+	player.play("run")
 
 func _ready():
 	init_bot()

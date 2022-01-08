@@ -13,12 +13,12 @@ var cooldown_bar = null
 var action_hint = null
 var action_names = {
 	"Rogue": "pickpocket",
-	"Mage": "swap",
+	"Mage": "swap trap",
 	"Barbarian": "stomp"
 }
 var action_verbed = {
 	"Rogue": "pickpocketed",
-	"Mage": "swapped with",
+	"Mage": "deployed swap trap",
 	"Barbarian": "stomped"
 }
 
@@ -53,6 +53,7 @@ func add_to_inventory(item):
 		get_parent().writelog("[i]" + player_name + "[/i] has dropped " + drop)
 	get_parent().writelog("[i]" + player_name + "[/i] has picked up " + item)
 	if local:
+		$pickup.play()
 		get_parent().get_node("CanvasLayer/bottom_center/inventory").set_items(inventory)
 	elif inventory_node:
 		inventory_node.get_node("Inventory").set_items(inventory)
@@ -96,7 +97,16 @@ func player_in_range():
 	return target
 
 func transfer_trap():
-	pass
+	var books = [ "Red Book", "Green Book", "Blue Book", "Brown Book" ]
+	books.shuffle()
+	var random_offset = Vector3(rand_range(-4, 4), 0, rand_range(-4, 4))
+	var drop = books[0]
+	var item_drop = load("Components/Item.tscn").instance()
+	item_drop.item_name = drop
+	item_drop.dropped_by = player_name
+	item_drop.is_trap = true
+	item_drop.translation = translation + random_offset
+	get_parent().add_child(item_drop)
 
 func stomp(target_player):
 	play("attack")
@@ -104,6 +114,33 @@ func stomp(target_player):
 	target_player.play("defeat")
 	target_player.drop_everything()
 
+func swap(target):
+	# this is a reverse pickpocket (mage ability)
+	var players = get_tree().get_nodes_in_group("players")
+	var target_player = null
+	for player in players:
+		if player.player_name == target:
+			target_player = player
+			break
+	if !target_player:
+		return
+	var want = "Blue Book"
+	var most = 0
+	for book_type in Game.book_types:
+		var count = target_player.inventory.count(book_type)
+		if count > most:
+			most = count
+			want = book_type
+	if inventory.count(want) == 0:
+		if inventory.size() > 0:
+			want = inventory[0]
+		else:
+			get_parent().writelog("Swap trap failed on [i]" + player_name + "[/i] because inventory was empty")
+			return
+	target_player.add_to_inventory(want)
+	remove_from_inventory(want)
+	get_parent().writelog("[i]" + player_name + "[/i] fell for [i]" + target + "[/i]'s swap trap!")
+	
 func pickpocket(target_player):
 	var want = "Blue Book"
 	var most = 0
@@ -123,18 +160,26 @@ func pickpocket(target_player):
 		
 func perform_action():
 	var now = OS.get_ticks_msec()
+	if character_class == "Mage":
+		if now - last_special_action > special_action_cooldown:
+			last_special_action = now
+			$action.play()
+			transfer_trap()
+			get_parent().writelog("[i]" + player_name + "[/i] " + action_verbed[character_class])
+		else:
+			get_parent().writelog("Cooldown active")
+		return
 	var in_range = player_in_range()
 	if !in_range:
 		get_parent().writelog("No player in range")
 	else:
 		if now - last_special_action > special_action_cooldown:
+			$action.play()
 			last_special_action = now
 			cooldown_bar.show()
 			action_hint.hide()
 			if character_class == "Rogue":
 				pickpocket(in_range)
-			elif character_class == "Mage":
-				transfer_trap()
 			elif character_class == "Barbarian":
 				stomp(in_range)
 			in_range.get_node("victimized").emitting = true
