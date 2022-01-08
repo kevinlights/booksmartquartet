@@ -1,0 +1,36 @@
+image: barichello/godot-ci:3.4.2
+# Cache imported assets between runs
+cache:
+  key: import-assets
+  paths:
+    - .import/
+stages:
+  - export
+  - deploy
+variables:
+  EXPORT_NAME: booksmart_quartets
+
+web:
+  stage: export
+  script:
+    - mkdir -v -p ${EXPORT_NAME}_web
+    - godot -v --export "HTML5" ${EXPORT_NAME}_web/index.html
+  artifacts:
+    name: $EXPORT_NAME-$CI_JOB_NAME
+    paths:
+      - ${EXPORT_NAME}_web
+
+# GitLab Pages Deploy
+pages:
+  stage: deploy
+  dependencies:
+    - web
+  script:
+    - mkdir -p public
+    - mv ${EXPORT_NAME}_web/** ./public
+  artifacts:
+    paths:
+      - public
+  only: 
+    - master
+
