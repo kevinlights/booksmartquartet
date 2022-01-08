@@ -45,6 +45,9 @@ Magic Books (cc0)
 KayKit Dungeon Pack (cc0)
 Jellee Bold (OFL)
 LetsTrace (OFL)
+RPG Ambience Dungeon (cc-by 3.0)
+Castle 03 (cc-by 4.0)
+Sound Effects by SubspaceAudio (cc0)
 
 Asset attributions  listed in readme.md "
 text = "BookSmart Quartets 
@@ -56,8 +59,14 @@ Magic Books (cc0)
 KayKit Dungeon Pack (cc0)
 Jellee Bold (OFL)
 LetsTrace (OFL)
+RPG Ambience Dungeon (cc-by 3.0)
+Castle 03 (cc-by 4.0)
+Sound Effects by SubspaceAudio (cc0)
 
 Asset attributions  listed in readme.md "
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Back" type="Button" parent="CanvasLayer/center/Panel"]
 margin_left = 20.0

@@ -26,6 +26,9 @@ https://opengameart.org/content/rpg-ambience-dungeon
 Music: Castle 03 by Beau Buckley (cc-by 4.0):
 https://opengameart.org/content/castle-03
 
+Sound Effects by SubspaceAudio (cc0):
+https://opengameart.org/content/512-sound-effects-8-bit-style
+
 ## Hey! What's this Fediverse stuff?
 
 The Fediverse is a network of individually hosted, federated services.
