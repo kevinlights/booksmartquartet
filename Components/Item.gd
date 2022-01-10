@@ -18,6 +18,7 @@ var item_colors = {
 func _ready():
 	creation_time = OS.get_ticks_msec()
 	$CPUParticles.color = item_colors[item_name]
+	$glow.modulate = item_colors[item_name]
 
 func is_pickable(player_name):
 	if player_name != dropped_by:
